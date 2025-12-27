@@ -9,7 +9,7 @@ function PageLayout({ children }) {
         {children}
       </main>
       <Footer />
-    </div>
+    </div> 
   );
 }
 

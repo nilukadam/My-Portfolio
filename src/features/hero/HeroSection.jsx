@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  fadeUp,
-  staggerContainer
-} from "../../motion/presets";
+import { fade, stagger } from "../../components/motion";
 
 /*
   HeroSection
@@ -13,20 +10,21 @@ import {
 */
 
 const HeroSection = () => {
+    console.log("HeroSection rendered");
   return (
     <section
       className="min-h-[80vh] flex items-center"
       aria-labelledby="hero-heading"
     >
       <motion.div
-        variants={staggerContainer}
+        variants={stagger}
         initial="hidden"
-        animate="show"
+        animate="visible"
         className="max-w-3xl"
       >
         {/* Status Indicator */}
         <motion.span
-          variants={fadeUp}
+          variants={fade}
           className="inline-block mb-4 text-sm font-medium text-emerald-600"
         >
           ● Open to work · Freelance available
@@ -35,7 +33,7 @@ const HeroSection = () => {
         {/* Main Headline */}
         <motion.h1
           id="hero-heading"
-          variants={fadeUp}
+          variants={fade}
           className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900"
         >
           Building scalable, high-quality web experiences
@@ -43,7 +41,7 @@ const HeroSection = () => {
 
         {/* Supporting Subheading */}
         <motion.h2
-          variants={fadeUp}
+          variants={fade}
           className="mt-5 text-lg text-gray-600 leading-relaxed"
         >
           Frontend developer focused on clean UI, performance,
@@ -52,7 +50,7 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          variants={fadeUp}
+          variants={fade}
           className="mt-8 flex flex-wrap gap-4"
         >
           <button
@@ -77,3 +75,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+ 

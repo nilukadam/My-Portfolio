@@ -16,7 +16,7 @@ export const fade = {
       y: 0,
       transition: { duration: 0.5, ease: 'easeOut' }
     }
-  };
+  }; 
   
   export const stagger = {
     hidden: {},

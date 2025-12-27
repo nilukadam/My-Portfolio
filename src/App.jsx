@@ -1,9 +1,10 @@
 import PageLayout from "./components/layout/PageLayout";
+import HeroSection from "./features/hero/HeroSection";
 
 function App() {
   return (
     <PageLayout>
-      {/* Sections will come here later */}
+      <HeroSection/>
     </PageLayout>
   );
 }
