@@ -10,7 +10,6 @@ import { fade, stagger } from "../../components/motion";
 */
 
 const HeroSection = () => {
-    console.log("HeroSection rendered");
   return (
     <section
       className="min-h-[80vh] flex items-center"
@@ -20,7 +19,7 @@ const HeroSection = () => {
         variants={stagger}
         initial="hidden"
         animate="visible"
-        className="max-w-3xl"
+        className="max-w-3xl mx-auto px-6"
       >
         {/* Status Indicator */}
         <motion.span
@@ -34,7 +33,7 @@ const HeroSection = () => {
         <motion.h1
           id="hero-heading"
           variants={fade}
-          className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900"
+          className="text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight"
         >
           Building scalable, high-quality web experiences
         </motion.h1>
@@ -42,7 +41,7 @@ const HeroSection = () => {
         {/* Supporting Subheading */}
         <motion.h2
           variants={fade}
-          className="mt-5 text-lg text-gray-600 leading-relaxed"
+          className="mt-5 text-lg text-gray-400 leading-relaxed"
         >
           Frontend developer focused on clean UI, performance,
           and maintainable React architecture.
@@ -51,20 +50,27 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <motion.div
           variants={fade}
-          className="mt-8 flex flex-wrap gap-4"
+          className="mt-10 flex flex-wrap gap-4"
         >
           <button
-            className="px-6 py-3 text-sm font-medium rounded-md
-                       bg-gray-900 text-white hover:bg-gray-800
-                       transition"
+            className="
+              px-6 py-3 text-sm font-medium rounded-md
+              bg-white text-black 
+              hover:bg-gray-300
+              transition-colors duration-200
+              "
           >
             View Work
           </button>
 
           <button
-            className="px-6 py-3 text-sm font-medium rounded-md
-                       border border-gray-300 text-gray-700
-                       hover:border-gray-400 transition"
+            className="
+              px-6 py-3 text-sm font-medium rounded-md
+              border border-gray-500 text-gray-200
+              hover:border-white hover-text-white
+              hover:bg-white/5
+              transition-colors duration-200
+              "
           >
             Download Resume
           </button>
