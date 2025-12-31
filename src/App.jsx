@@ -3,6 +3,7 @@ import AboutSection from "./features/about/AboutSection";
 import HeroSection from "./features/hero/HeroSection";
 import FeaturedProject from "./features/projects/FeaturedProject";
 import ProjectsOverview from "./features/projects/ProjectOverview";
+import ServicesSection from "./features/services/ServicesSection";
 import SkillsSection from "./features/skills/SkillsSection";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <SkillsSection/>
       <FeaturedProject/>
       <ProjectsOverview/>
+      <ServicesSection/>
     </PageLayout>
   );
 }
