@@ -11,7 +11,7 @@ const ContactSection = () => {
       <section
         id="contact"
         aria-labelledby="contact-heading"
-        className="py-24 border-t border-gray-200"
+        className="py-24 border-t border-gray-200 min-h-[80vh] flex items-center"
       >
         <div className="max-w-3xl mx-auto px-4">
           <h2

@@ -13,7 +13,8 @@ import { motion } from "framer-motion";
 const ServicesSection = () => {
   return (
     <section
-      className="py-20 border-t border-gray-200"
+    id="services"
+      className="py-20 border-t border-gray-200 min-h-[80vh] flex items-center"
       aria-labelledby="services-heading"
     >
       <div className="max-w-6xl mx-auto px-4">

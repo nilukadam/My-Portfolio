@@ -13,7 +13,8 @@ import { fade, stagger } from "../../components/motion";
 const AboutSection = () => {      
   return (
     <section
-      className="py-24 border-t border-white/10"
+    id="about"
+      className="py-24 border-t border-white/10 min-h-[80vh] flex items-center"
       aria-labelledby="about-heading"
     >
       <motion.div

@@ -12,7 +12,8 @@ import { fade, stagger } from "../../components/motion";
 const HeroSection = () => {
   return (
     <section
-      className="min-h-[80vh] flex items-center"
+    id="home"
+      className="min-h-[80vh] flex items-center "
       aria-labelledby="hero-heading"
     >
       <motion.div

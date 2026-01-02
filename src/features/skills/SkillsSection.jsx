@@ -45,7 +45,8 @@ const skills = [
   const SkillsSection = () => {
     return (
       <section
-        className="py-24"
+      id="skills"
+        className="py-24 min-h-[80vh] flex items-center"
         aria-labelledby="skills-heading"
       >
         <div className="max-w-5xl mx-auto px-6">

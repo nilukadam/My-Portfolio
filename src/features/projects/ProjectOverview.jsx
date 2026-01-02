@@ -27,7 +27,8 @@ const projects = [
 const ProjectsOverview = () => {
   return (
     <section
-      className="py-24"
+    id="projects"
+      className="py-24 min-h-[80vh] flex items-center"
       aria-labelledby="projects-overview-heading"
     >
       <div className="max-w-5xl mx-auto px-6">
