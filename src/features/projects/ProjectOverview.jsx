@@ -1,33 +1,27 @@
-/*
-  ProjectsOverview
-  Purpose:
-  - Show additional ongoing projects
-  - Provide breadth without deep detail
-*/
-
 import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
     title: "E-commerce Frontend",
-    description:
-      "An ongoing frontend-focused e-commerce interface with product listing, cart flow, and responsive layout. The emphasis is on reusable components and predictable UI behavior.",
+    description: "A frontend-focused e-commerce application demonstrating product listing, cart interactions, and predictable UI state updates.",
     tech: "React, Tailwind CSS, JavaScript",
     status: "In Progress",
+    href: "/projects/ecommerce",
   },
   {
     title: "Quora-Style Q&A Platform",
     description:
-      "A question-and-answer platform prototype focused on content readability, navigation flow, and scalable component structure.",
+      "A question-and-answer platform prototype focused on content readability and scalable component structure.",
     tech: "React, Tailwind CSS, React Router",
     status: "In Progress",
+    href: "/projects/featured",
   },
 ];
 
 const ProjectsOverview = () => {
   return (
     <section
-    id="projects"
+      id="projects"
       className="py-24 min-h-[80vh] flex items-center"
       aria-labelledby="projects-overview-heading"
     >
@@ -36,18 +30,17 @@ const ProjectsOverview = () => {
           id="projects-overview-heading"
           className="text-3xl font-semibold text-white mb-10"
         >
-          Other Projects
+          Additional Projects
         </h2>
+
+        <p className="mt-2 mb-10 text-gray-400 max-w-2xl">
+           Selected projects showcasing frontend architecture, UI clarity,
+           and real-world interaction patterns.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-              status={project.status}
-            />
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
       </div>
