@@ -5,28 +5,38 @@ import { motion } from "framer-motion";
 
 /*
   ServicesSection
+
   Purpose:
-  - Clearly explain how I help clients and teams
-  - Focus on problems + approach (not selling)
+  - Explain how I help teams through frontend expertise
+  - Focus on problems and approach, not selling
+  - Maintain a calm, professional, frontend-first tone
+
+  Phase:
+  - Phase 7.5C (Micro-polish only)
+
+  Notes:
+  - No new services added
+  - No content rewritten
+  - Only spacing, typography, and visual rhythm refined
 */
 
 const ServicesSection = () => {
   return (
     <section
-    id="services"
-      className="py-20 border-t border-gray-200 min-h-[80vh] flex items-center"
+      id="services"
       aria-labelledby="services-heading"
+      className="py-24 border-t border-white/10 min-h-[80vh] flex items-center"
     >
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Heading */}
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Heading */}
         <div className="max-w-2xl mb-14">
           <h2
             id="services-heading"
-            className="text-3xl font-semibold text-gray-900 mb-4"
+            className="text-3xl font-semibold text-white mb-4"
           >
             How I can help
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed">
             I work with founders, teams, and individuals who care about building
             clean, reliable, and thoughtful frontend products.
           </p>
@@ -41,36 +51,32 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="p-6 border border-gray-200 rounded-lg"
+              className="p-6 border border-white/10 rounded-lg"
             >
-              <h3 className="text-xl font-medium text-gray-900 mb-3">
-                {service.title}
-              </h3>
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium text-white">
+                  {service.title}
+                </h3>
 
-              <p className="text-gray-700 mb-3">
-                <span className="font-medium">Problem:</span>{" "}
-                {service.problem}
-              </p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  <span className="text-gray-300 font-medium">Problem:</span>{" "}
+                  {service.problem}
+                </p>
 
-              <p className="text-gray-700">
-                <span className="font-medium">Approach:</span>{" "}
-                {service.approach}
-              </p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  <span className="text-gray-300 font-medium">Approach:</span>{" "}
+                  {service.approach}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Call to Action */}
+        {/* Closing Line */}
         <div className="mt-16">
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-400">
             If you think my approach fits what you're building, we can talk.
           </p>
-          <a
-            href="#contact"
-            className="inline-block text-emerald-600 font-medium hover:underline"
-          >
-            Get in touch →
-          </a>
         </div>
       </div>
     </section>
