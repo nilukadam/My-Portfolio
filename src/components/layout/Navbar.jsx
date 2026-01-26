@@ -19,7 +19,7 @@ const Navbar = () => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
-        });
+        }); 
       },
       {
         root: null,
@@ -38,7 +38,15 @@ const Navbar = () => {
 
   const handleNavClick = (id) => {
     const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
+
+    const yOffset = -80; // navbar height
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    section?.scrollIntoView({ top: y, behavior: "smooth" });
   };
 
   return (
@@ -48,12 +56,16 @@ const Navbar = () => {
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         
         {/* Logo */}
-        <button
-          onClick={() => handleNavClick("home")}
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("home")
+          }}
           className="text-lg font-semibold tracking-tight text-gray-900"
         >
           NK <span className="text-gray-400 font-normal">| Frontend</span>
-        </button>
+        </a>
 
         {/* Navigation */}
         <ul className="hidden md:flex items-center gap-6 text-sm">

@@ -57,7 +57,7 @@ const handleEmailClick = () => {
             }
             className="inline-flex items-center mb-7 text-xs font-medium text-emerald-400"
           >
-            <span className="w-2 h-2 mr-2 rounded-full bg-emerald-400" />
+            <span aria-hidden="true" className=" w-2 h-2 mr-2 rounded-full bg-emerald-400" />
             Open for work · Freelancing ready
           </motion.div>
 
@@ -72,7 +72,7 @@ const handleEmailClick = () => {
             </a>
 
             <button
-              disabled
+              aria-disabled="true"
               aria-label="Resume coming soon"
               title="Resume will be added soon"
               className="px-6 py-3 rounded-md border border-gray-600 text-sm text-gray-400 cursor-not-allowed"
@@ -98,7 +98,7 @@ const handleEmailClick = () => {
             <div className="relative group flex flex-col items-center">
               <button
                 onClick={handleEmailClick}
-                aria-label="Copy email address"
+                aria-label="Copy email address and open mail client"
                 className="transition-transform hover:scale-110 hover:text-white text-gray-400"
               >
                 <Mail size={22} />
