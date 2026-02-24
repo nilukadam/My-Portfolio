@@ -1,147 +1,195 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { fade, stagger } from "../../components/motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import resumePDF from "../../assets/images/MyResume.pdf";
+import profileImage from "../../assets/images/myPic.png";
 
 const HeroSection = () => {
   const prefersReducedMotion = useReducedMotion();
 
-const handleEmailClick = () => {
-  navigator.clipboard.writeText("kadamnilu12@gmail.com");
-  window.location.href = "mailto:kadamnilu12@gmail.com";
-};
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("kadamnilu12@gmail.com");
+    window.location.href = "mailto:kadamnilu12@gmail.com";
+  };
 
   return (
     <section
       id="home"
-      className="min-h-[80vh] pt-28 flex items-center bg-black text-white"
+      className="pt-20 pb-24 text-white"
       aria-labelledby="hero-heading"
     >
       <motion.div
         variants={stagger}
-        initial={false}
-        animate="show"
-        className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center px-6"
+        initial="hidden"
+        animate="visible"
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center"
       >
-        {/* LEFT — IDENTITY & MESSAGE */}
-        <div>
-          {/* Name */}
+        {/* LEFT — MESSAGE */}
+        <div className="space-y-8">
+
+          {/* Headline */}
           <motion.h1
             id="hero-heading"
             variants={fade}
-            className="text-4xl sm:text-5xl font-semibold tracking-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-6xl font-semibold tracking-tight leading-[1.05] max-w-4xl"
           >
-            I’m Nilu Kadam
+            I Engineer Clean, Scalable Frontend Experiences.
           </motion.h1>
 
-          {/* What you do */}
+          {/* Subheading */}
           <motion.p
             variants={fade}
-            className="text-lg text-gray-300 max-w-xl mb-5"
+            className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-2xl"
           >
-            I build clean, production-ready web applications with React and
-            scalable backend architecture.
+            I’m Nilu Kadam — a React & Tailwind focused frontend developer
+            building structured, production-ready web applications with clarity,
+            performance, and maintainability in mind.
           </motion.p>
 
-          {/* Availability */}
+          {/* Availability Badge */}
           <motion.div
             variants={fade}
-            animate={
-              prefersReducedMotion
-                ? { opacity: 1 }
-                : { opacity: [0.65, 1, 0.65] }
-            }
-            transition={
-              prefersReducedMotion
-                ? {}
-                : { duration: 2.6, repeat: Infinity, ease: "easeInOut" }
-            }
-            className="inline-flex items-center mb-7 text-xs font-medium text-emerald-400"
+            animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1 }}
+            className="inline-flex items-center text-sm font-medium text-emerald-400"
           >
-            <span aria-hidden="true" className=" w-2 h-2 mr-2 rounded-full bg-emerald-400" />
+            <span
+              aria-hidden="true"
+              className="w-2 h-2 mr-2 rounded-full bg-emerald-400"
+            />
             Open for work · Freelancing ready
           </motion.div>
 
-          {/* CTAs */}
-          <motion.div variants={fade} className="flex gap-4">
+          {/* CTA Buttons */}
+          <motion.div
+            variants={fade}
+            className="flex flex-wrap gap-4 pt-2"
+          >
+             {/* Primary CTA */}
             <a
               href="#projects"
-              aria-label="View projects"
-              className="px-6 py-3 rounded-md bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
+              className="
+              px-6 py-3 rounded-xl bg-white
+              text-black text-sm font-medium
+              tansition-all duration-200 
+              hover:bg-white/90 hover:scale-[1.02]
+              active:scale-[0.98]
+              "
             >
               View Work
             </a>
 
-            <button
-              aria-disabled="true"
-              aria-label="Resume coming soon"
-              title="Resume will be added soon"
-              className="px-6 py-3 rounded-md border border-gray-600 text-sm text-gray-400 cursor-not-allowed"
+              {/* Secondary CTA */}
+            <a
+              href={resumePDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+              px-6 py-3 rounded-xl
+              border border-white/20 text-sm font-medium 
+              transition-all duration-200
+              hover:border-white/40 hover:bg-white/5
+              hover: scale-[1.02] active:scale-[0.98]
+              "
             >
-              Resume (Coming Soon)
-            </button>
+              Download Resume
+            </a>
           </motion.div>
         </div>
 
-        {/* RIGHT — PHOTO & CONNECTION */}
+        {/* RIGHT — PHOTO + SOCIAL */}
         <motion.div
           variants={fade}
-          className="flex flex-col items-center md:items-end"
+          className="flex flex-col items-center lg:items-end"
         >
-          {/* Photo placeholder */}
-          <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-gray-500 text-sm mb-5">
-            Photo
-          </div>
+          <div className="w-52 sm:w-64 lg:w-72 mx-auto lg:mx-0 space-y-6">
 
-          {/* Contact / Connect */}
-          <div className="flex gap-6 text-gray-400">
-            {/* Email */}
-            <div className="relative group flex flex-col items-center">
-              <button
-                onClick={handleEmailClick}
-                aria-label="Copy email address and open mail client"
-                className="transition-transform hover:scale-110 hover:text-white text-gray-400"
-              >
-                <Mail size={22} />
-              </button>
-
-              <span className="mt-1 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition">
-                Click to copy
-              </span>
+            {/* Profile Photo */}
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/30">
+              <img
+                src={profileImage}
+                alt="Nilu Kadam profile photo"
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            {/* GitHub */}
-          <div className="relative group flex flex-col items-center">
-           <a
-             href="https://github.com/nilukadam"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="GitHub"
-              className="transition-transform hover:scale-110 hover:text-white"
-            >
-             <Github size={22} />
-           </a>
-           <span className="mt-1 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition">
-             GitHub
-           </span>
-          </div>
+            {/* Social Icons */}
+           <div className="flex justify-center gap-6 text-white/60 pt-2">
 
-         {/* LinkedIn */}
-         <div className="relative group flex flex-col items-center">
-           <a
-              href="https://linkedin.com/in/NiluKadam12"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="transition-transform hover:scale-110 hover:text-white"
-            >
-              <Linkedin size={22} />
-            </a>
-            <span className="mt-1 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition">
-              LinkedIn
-           </span>
+  {/* Email */}
+  <div className="relative group">
+  <a
+    href="mailto:kadamnilu12@gmail.com?subject=Frontend%20Opportunity&body=Hi%20Nilu,%0D%0A%0D%0AI%20would%20like%20to%20connect%20regarding..."
+    aria-label="Email"
+    className="hover:text-white transition-colors duration-200"
+  >
+    <Mail size={26} />
+  </a>
+
+  <span className="
+    absolute -top-8 left-1/2 -translate-x-1/2
+    text-xs px-2 py-1 rounded-md
+    bg-white text-black
+    opacity-0 group-hover:opacity-100
+    transition-opacity duration-200
+    pointer-events-none
+  ">
+    Email
+  </span>
+</div>
+
+  {/* GitHub */}
+  <div className="relative group">
+    <a
+      href="https://github.com/nilukadam"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+      className="hover:text-white transition-colors duration-200"
+    >
+      <Github size={26} />
+    </a>
+
+    <span className="
+      absolute -top-8 left-1/2 -translate-x-1/2
+      text-xs px-2 py-1 rounded-md
+      bg-white text-black
+      opacity-0 group-hover:opacity-100
+      transition-opacity duration-200
+      pointer-events-none
+    ">
+      GitHub
+    </span>
+  </div>
+
+  {/* LinkedIn */}
+  <div className="relative group">
+    <a
+      href="https://linkedin.com/in/NiluKadam12"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+      className="hover:text-white transition-colors duration-200"
+    >
+      <Linkedin size={26} />
+    </a>
+
+    <span className="
+      absolute -top-8 left-1/2 -translate-x-1/2
+      text-xs px-2 py-1 rounded-md
+      bg-white text-black
+      opacity-0 group-hover:opacity-100
+      transition-opacity duration-200
+      pointer-events-none
+    ">
+      LinkedIn
+    </span>
+  </div>
+
+</div>
+
           </div>
-         </div>
         </motion.div>
+
       </motion.div>
     </section>
   );

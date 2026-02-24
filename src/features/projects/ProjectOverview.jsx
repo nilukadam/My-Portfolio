@@ -1,20 +1,33 @@
 import ProjectCard from "./ProjectCard";
+import qnaImg from "../../assets/screenShots/qna-homepage.png";
+import booknestImg from "../../assets/screenShots/booknest-home.png";
+
+/*
+  ProjectsOverview — Final Production Version
+
+  Strategy:
+  - Structured Q&A is the flagship (full-width on desktop)
+  - BookNest remains strong secondary
+  - No visual noise
+  - Silent dominance hierarchy
+*/
 
 const projects = [
   {
-    title: "E-commerce Frontend",
-    description: "A frontend-focused e-commerce application demonstrating product listing, cart interactions, and predictable UI state updates.",
-    tech: "React, Tailwind CSS, JavaScript",
-    status: "In Progress",
-    href: "/projects/ecommerce",
+    title: "Structured Q&A Platform",
+    description:
+      "Flagship frontend system engineered with routing discipline, authentication boundaries, and production-validated SPA stability.",
+    image: qnaImg,
+    href: "/projects/structured-qna",
+    featured: true,
   },
   {
-    title: "Quora-Style Q&A Platform",
+    title: "BookNest",
     description:
-      "A question-and-answer platform prototype focused on content readability and scalable component structure.",
-    tech: "React, Tailwind CSS, React Router",
-    status: "In Progress",
-    href: "/projects/featured",
+      "Structured React e-commerce SPA modeling authentication, cart coordination, and complete order lifecycle management.",
+    image: booknestImg,
+    href: "/projects/booknest",
+    featured: false,
   },
 ];
 
@@ -22,27 +35,40 @@ const ProjectsOverview = () => {
   return (
     <section
       id="projects"
-      className="py-24 min-h-[80vh] flex items-center"
       aria-labelledby="projects-overview-heading"
+      className="py-28"
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <h2
-          id="projects-overview-heading"
-          className="text-3xl font-semibold text-white mb-10"
-        >
-          Additional Projects
-        </h2>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-        <p className="mt-2 mb-10 text-gray-400 max-w-2xl">
-           Selected projects showcasing frontend architecture, UI clarity,
-           and real-world interaction patterns.
-        </p>
+        {/* Section Header */}
+        <div className="space-y-5 max-w-2xl">
+          <h2
+            id="projects-overview-heading"
+            className="text-3xl sm:text-4xl font-semibold tracking-tight"
+          >
+            Selected Work
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
+          <p className="text-white/65 leading-relaxed">
+            Production-ready frontend systems focused on structure,
+            scalability, and predictable user experience.
+          </p>
         </div>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className={project.featured ? "md:col-span-2" : ""}
+            >
+              <ProjectCard {...project} />
+            </div>
+          ))}
+
+        </div>
+
       </div>
     </section>
   );

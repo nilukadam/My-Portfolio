@@ -4,11 +4,11 @@ import PageLayout from "./components/layout/PageLayout";
 import AboutSection from "./features/about/AboutSection";
 import ContactSection from "./features/contact/ContactSection";
 import HeroSection from "./features/hero/HeroSection";
-import FeaturedProject from "./features/projects/FeaturedProject";
+import StructuredQnA from "./features/projects/StructuredQnA";
 import ProjectsOverview from "./features/projects/ProjectOverview";
 import ServicesSection from "./features/services/ServicesSection";
 import SkillsSection from "./features/skills/SkillsSection";
-import EcommerceProject from "./features/projects/EcommerceProjects";
+import BookNest from "./features/projects/BookNest";
 
 function HomePage() {
   return (
@@ -33,12 +33,12 @@ function App() {
 
           {/* Featured Project (dedicated page) */}
           <Route
-            path="/projects/featured"
-            element={<FeaturedProject />}
+            path="/projects/structured-qna"
+            element={<StructuredQnA />}
           />
           <Route
-          path="/projects/ecommerce"
-          element={<EcommerceProject/>}
+          path="/projects/booknest"
+          element={<BookNest/>}
           />
         </Routes>
       </PageLayout>

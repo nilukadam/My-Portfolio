@@ -1,5 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
+/* ----------------------------------------
+   Navigation Configuration
+----------------------------------------- */
 const NAV_ITEMS = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
@@ -9,20 +14,31 @@ const NAV_ITEMS = [
   { label: "Contact", id: "contact" }
 ];
 
+const NAVBAR_HEIGHT = 80; // px (used for scroll offset)
+
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const scrollTimeout = useRef(null);
+
+  /* ----------------------------------------
+     Section Observer (Homepage Only)
+  ----------------------------------------- */
   useEffect(() => {
+    if (location.pathname !== "/") return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
-        }); 
+        });
       },
       {
-        root: null,
         rootMargin: "-40% 0px -55% 0px",
         threshold: 0
       }
@@ -34,40 +50,64 @@ const Navbar = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
-  const handleNavClick = (id) => {
+  /* ----------------------------------------
+     Smooth Scroll Utility
+  ----------------------------------------- */
+  const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (!section) return;
 
-    const yOffset = -80; // navbar height
     const y =
       section.getBoundingClientRect().top +
-      window.pageYOffset +
-      yOffset;
+      window.pageYOffset -
+      NAVBAR_HEIGHT;
 
-    section?.scrollIntoView({ top: y, behavior: "smooth" });
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  /* ----------------------------------------
+     Hybrid Navigation (Route + Scroll)
+  ----------------------------------------- */
+  const handleNavClick = (id) => {
+    setIsOpen(false);
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      scrollTimeout.current = setTimeout(() => {
+        scrollToSection(id);
+      }, 120);
+    } else {
+      scrollToSection(id);
+    }
+  };
+
+  /* ----------------------------------------
+     Cleanup Pending Timeout
+  ----------------------------------------- */
+  useEffect(() => {
+    return () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 
-     bg-white/95 backdrop-blur-md 
-     border-b border-gray-200/60">
-      <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        
+    <header className="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/60">
+      {/* Main Nav Container */}
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
         {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("home")
-          }}
+        <button
+          onClick={() => handleNavClick("home")}
           className="text-lg font-semibold tracking-tight text-gray-900"
         >
           NK <span className="text-gray-400 font-normal">| Frontend</span>
-        </a>
+        </button>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-6 text-sm">
           {NAV_ITEMS.map(({ label, id }) => (
             <li key={id}>
@@ -75,20 +115,75 @@ const Navbar = () => {
                 onClick={() => handleNavClick(id)}
                 className={`relative px-1 py-2 transition-colors
                   ${
-                    activeSection === id
+                    activeSection === id && location.pathname === "/"
                       ? "text-gray-900 font-medium"
                       : "text-gray-500 hover:text-gray-800"
                   }`}
               >
                 {label}
-                {activeSection === id && (
+                {activeSection === id && location.pathname === "/" && (
                   <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-gray-900 rounded-full" />
                 )}
               </button>
             </li>
           ))}
         </ul>
+
+        {/* Mobile Toggle Button */}
+        <button
+          className="md:hidden text-gray-800"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </nav>
+
+      {/* ----------------------------------------
+         Mobile Overlay
+      ----------------------------------------- */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/40 transition-opacity duration-200"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* ----------------------------------------
+         Mobile Slide Panel
+      ----------------------------------------- */}
+      <div
+        className={`fixed top-0 right-0 z-[60] w-72 h-screen 
+        bg-[#111111] shadow-2xl border-l border-white/10
+        transform transition-transform duration-300 ease-out
+        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        {/* Panel Header */}
+        <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
+          <span className="text-white font-medium tracking-wide">Menu</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-gray-400 hover:text-white transition-colors"
+            aria-label="Close Menu"
+          >
+            <X size={22} />
+          </button>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className="flex flex-col px-8 py-8 space-y-6 text-base">
+          {NAV_ITEMS.map(({ label, id }) => (
+            <li key={id}>
+              <button
+                onClick={() => handleNavClick(id)}
+                className="w-full text-left font-medium tracking-wide text-gray-400 hover:text-white transition-colors"
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 };

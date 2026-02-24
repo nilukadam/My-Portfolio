@@ -1,8 +1,11 @@
-/* 
-  SkillsSection
-  Purpose:
-  - Present frontend-focused skills with clarity and honesty
-  - Show how tools are used in real UI work
+/*
+  SkillsSection — Step 2 Visual Depth Upgrade
+
+  Goals:
+  - Remove forced vertical centering
+  - Standardize container system
+  - Improve card depth and hover polish
+  - Enhance typography consistency
 */
 
 const skills = [
@@ -48,30 +51,40 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-24 min-h-[80vh] flex items-center"
       aria-labelledby="skills-heading"
+      className="py-28"
     >
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Heading */}
-        <h2
-          id="skills-heading"
-          className="text-3xl font-semibold text-white mb-10"
-        >
-          Skills
-        </h2>
+        <div className="max-w-3xl mb-14">
+          <h2
+            id="skills-heading"
+            className="text-3xl sm:text-4xl font-semibold tracking-tight"
+          >
+            Skills
+          </h2>
+        </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {skills.map((group) => (
             <div
               key={group.title}
-              className="border border-white/10 rounded-lg p-6"
+              className="
+                rounded-2xl 
+                border border-white/10 
+                p-7
+                transition-all duration-200
+                hover:border-white/20
+                hover:-translate-y-1
+              "
             >
-              <h3 className="text-xl font-medium text-white mb-4">
+              <h3 className="text-xl font-medium mb-5">
                 {group.title}
               </h3>
 
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-3 text-white/70">
                 {group.items.map((item, index) => (
                   <li key={index} className="leading-relaxed">
                     {item}
