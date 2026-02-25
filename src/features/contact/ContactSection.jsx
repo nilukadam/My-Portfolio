@@ -1,11 +1,10 @@
 /*
-  ContactSection — Step 2 Visual Depth Upgrade
+  ContactSection — Final Production Rhythm Version
 
-  Goals:
-  - Align with dark theme system
-  - Remove forced height & divider
-  - Improve input contrast
-  - Maintain clean, professional tone
+  - Section spacing aligned with global system
+  - Typography contrast improved
+  - Controlled button motion
+  - Clean professional tone
 */
 
 const ContactSection = () => {
@@ -13,11 +12,11 @@ const ContactSection = () => {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="py-28"
+      className="py-24" // aligned with all other sections
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12"> {/* tightened from 16 → 12 */}
           <h2
             id="contact-heading"
             className="text-3xl sm:text-4xl font-semibold tracking-tight"
@@ -25,13 +24,13 @@ const ContactSection = () => {
             Get in touch
           </h2>
 
-          <p className="text-white/70 mt-4 leading-relaxed">
+          <p className="text-white/75 mt-4 leading-relaxed">
             If you’d like to discuss a project, role, or collaboration,
             feel free to leave a message. I’ll get back to you.
           </p>
         </div>
 
-        <form className="max-w-3xl space-y-8" noValidate>
+        <form className="max-w-3xl space-y-6" noValidate> {/* tightened from 8 → 6 */}
 
           {/* Name */}
           <div>
@@ -116,8 +115,7 @@ const ContactSection = () => {
               px-6 py-3 text-sm font-medium
               transition-all duration-200
               hover:bg-white/90
-              hover:scale-[1.02]
-              active:scale-[0.98]
+              active:scale-[0.98] /* removed hover scale for premium stability */
             "
           >
             Send message

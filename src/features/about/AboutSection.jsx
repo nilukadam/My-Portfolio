@@ -2,13 +2,11 @@ import { motion } from "framer-motion";
 import { fade, stagger } from "../../components/motion";
 
 /*
-  AboutSection — Step 2 Visual Depth Upgrade
+  AboutSection — Final Production Rhythm Version
 
-  Goals:
-  - Remove forced vertical centering
-  - Standardize container system
-  - Improve typography hierarchy
-  - Enhance visual rhythm without adding noise
+  - Section spacing aligned with global system
+  - Typography contrast improved
+  - Controlled vertical hierarchy
 */
 
 const AboutSection = () => {
@@ -16,7 +14,7 @@ const AboutSection = () => {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="py-28"
+      className="py-24" // aligned with Hero & Projects
     >
       <motion.div
         variants={stagger}
@@ -25,8 +23,8 @@ const AboutSection = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-3xl space-y-10">
-          
+        <div className="max-w-3xl space-y-8"> {/* tightened from 10 → 8 */}
+
           {/* Section Heading */}
           <motion.h2
             variants={fade}
@@ -37,7 +35,7 @@ const AboutSection = () => {
           </motion.h2>
 
           {/* About Content */}
-          <div className="space-y-6 text-white/70 leading-relaxed">
+          <div className="space-y-6 text-white/75 leading-relaxed">
             <motion.p variants={fade}>
               I approach frontend development as a problem-solving discipline,
               not just a visual one. My focus is on understanding the intent behind

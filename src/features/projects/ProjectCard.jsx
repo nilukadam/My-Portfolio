@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 /*
-  ProjectCard — Final Production Version
+  ProjectCard — Final Refined Production Version
 
   Supports:
   - Standard layout
-  - Flagship full-width layout
-  - Subtle elevation
-  - Consistent visual hierarchy
+  - Flagship prominence
+  - Controlled elevation
+  - Subtle hierarchy dominance
 */
 
 const ProjectCard = ({ title, description, image, href, featured }) => {
@@ -21,41 +21,48 @@ const ProjectCard = ({ title, description, image, href, featured }) => {
         transition-all duration-300 ease-out
         hover:border-white/20
         hover:bg-[#1a1a1a]
-        hover:-translate-y-1
+        ${featured ? "shadow-xl shadow-black/30" : "shadow-lg shadow-black/20"}
         focus:outline-none focus:ring-2 focus:ring-white/20
       `}
     >
       {/* Screenshot */}
       <div
         className={`
-          overflow-hidden
+          relative overflow-hidden
           ${featured ? "aspect-[16/8]" : "aspect-[16/10]"}
         `}
       >
+        {/* Subtle overlay for text balance */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
         <img
           src={image}
           alt={title}
           className="
             w-full h-full object-cover
             transition-transform duration-500 ease-out
-            group-hover:scale-[1.03]
+            group-hover:scale-[1.02]
           "
         />
       </div>
 
       {/* Content */}
-      <div className={`
-        ${featured ? "p-8" : "p-6"}
-        space-y-4
-      `}>
-        <h3 className={`
-          font-semibold tracking-tight
-          ${featured ? "text-2xl" : "text-xl"}
-        `}>
+      <div
+        className={`
+          ${featured ? "p-8" : "p-6"}
+          space-y-3
+        `}
+      >
+        <h3
+          className={`
+            font-semibold tracking-tight
+            ${featured ? "text-2xl" : "text-xl"}
+          `}
+        >
           {title}
         </h3>
 
-        <p className="text-white/65 leading-relaxed line-clamp-2">
+        <p className="text-white/75 leading-relaxed line-clamp-2">
           {description}
         </p>
 

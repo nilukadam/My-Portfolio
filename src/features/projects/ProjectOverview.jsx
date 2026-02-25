@@ -3,13 +3,12 @@ import qnaImg from "../../assets/screenShots/qna-homepage.png";
 import booknestImg from "../../assets/screenShots/booknest-home.png";
 
 /*
-  ProjectsOverview — Final Production Version
+  ProjectsOverview — Refined Production Version
 
-  Strategy:
-  - Structured Q&A is the flagship (full-width on desktop)
-  - BookNest remains strong secondary
-  - No visual noise
-  - Silent dominance hierarchy
+  - Clear flagship dominance
+  - Tight vertical rhythm
+  - Balanced section spacing
+  - Clean hierarchy
 */
 
 const projects = [
@@ -36,12 +35,12 @@ const ProjectsOverview = () => {
     <section
       id="projects"
       aria-labelledby="projects-overview-heading"
-      className="py-28"
+      className="py-24" // tightened from 28 → better global rhythm
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
         {/* Section Header */}
-        <div className="space-y-5 max-w-2xl">
+        <div className="space-y-4 max-w-xl">
           <h2
             id="projects-overview-heading"
             className="text-3xl sm:text-4xl font-semibold tracking-tight"
@@ -49,14 +48,14 @@ const ProjectsOverview = () => {
             Selected Work
           </h2>
 
-          <p className="text-white/65 leading-relaxed">
+          <p className="text-white/75 leading-relaxed">
             Production-ready frontend systems focused on structure,
             scalability, and predictable user experience.
           </p>
         </div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
           {projects.map((project) => (
             <div

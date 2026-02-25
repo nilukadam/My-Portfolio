@@ -2,13 +2,12 @@ import { services } from "./services.data";
 import { motion } from "framer-motion";
 
 /*
-  ServicesSection — Step 2 Visual Depth Upgrade
+  ServicesSection — Final Production Version
 
-  Goals:
-  - Remove forced vertical centering
-  - Standardize container system
-  - Improve card depth and hover polish
-  - Maintain calm, structured tone
+  - Section spacing aligned globally
+  - Card styling aligned with ProjectCard & Skills
+  - Removed bounce animation
+  - Improved contrast and rhythm
 */
 
 const ServicesSection = () => {
@@ -16,12 +15,12 @@ const ServicesSection = () => {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="py-28"
+      className="py-24" // aligned with all sections
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Heading */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12">
           <h2
             id="services-heading"
             className="text-3xl sm:text-4xl font-semibold tracking-tight"
@@ -29,7 +28,7 @@ const ServicesSection = () => {
             How I can help
           </h2>
 
-          <p className="text-white/70 leading-relaxed mt-4">
+          <p className="text-white/75 leading-relaxed mt-4">
             I work with founders, teams, and individuals who care about building
             clean, reliable, and thoughtful frontend products.
           </p>
@@ -47,23 +46,23 @@ const ServicesSection = () => {
               className="
                 rounded-2xl
                 border border-white/10
-                p-7
-                transition-all duration-200
+                bg-[#141414]  /* aligned with card system */
+                p-6
+                transition-colors duration-200
                 hover:border-white/20
-                hover:-translate-y-1
               "
             >
               <div className="space-y-4">
-                <h3 className="text-lg font-medium">
+                <h3 className="text-lg font-semibold">
                   {service.title}
                 </h3>
 
-                <p className="text-white/70 text-sm leading-relaxed">
+                <p className="text-white/75 text-sm leading-relaxed">
                   <span className="text-white/90 font-medium">Problem:</span>{" "}
                   {service.problem}
                 </p>
 
-                <p className="text-white/70 text-sm leading-relaxed">
+                <p className="text-white/75 text-sm leading-relaxed">
                   <span className="text-white/90 font-medium">Approach:</span>{" "}
                   {service.approach}
                 </p>
@@ -73,8 +72,8 @@ const ServicesSection = () => {
         </div>
 
         {/* Closing Line */}
-        <div className="mt-20 max-w-3xl">
-          <p className="text-white/70 leading-relaxed">
+        <div className="mt-16 max-w-3xl">
+          <p className="text-white/75 leading-relaxed">
             If you think my approach fits what you're building, we can talk.
           </p>
         </div>

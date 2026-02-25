@@ -1,11 +1,10 @@
 /*
-  SkillsSection — Step 2 Visual Depth Upgrade
+  SkillsSection — Final Production Version
 
-  Goals:
-  - Remove forced vertical centering
-  - Standardize container system
-  - Improve card depth and hover polish
-  - Enhance typography consistency
+  - Section spacing aligned with global rhythm
+  - Card styling aligned with ProjectCard system
+  - Removed bounce animation
+  - Improved contrast and stability
 */
 
 const skills = [
@@ -52,12 +51,12 @@ const SkillsSection = () => {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="py-28"
+      className="py-24" // aligned with all sections
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-12">
           <h2
             id="skills-heading"
             className="text-3xl sm:text-4xl font-semibold tracking-tight"
@@ -72,19 +71,19 @@ const SkillsSection = () => {
             <div
               key={group.title}
               className="
-                rounded-2xl 
-                border border-white/10 
-                p-7
-                transition-all duration-200
+                rounded-2xl
+                border border-white/10
+                bg-[#141414]  /* aligned with ProjectCard */
+                p-6
+                transition-colors duration-200
                 hover:border-white/20
-                hover:-translate-y-1
               "
             >
-              <h3 className="text-xl font-medium mb-5">
+              <h3 className="text-xl font-semibold mb-4">
                 {group.title}
               </h3>
 
-              <ul className="space-y-3 text-white/70">
+              <ul className="space-y-3 text-white/75">
                 {group.items.map((item, index) => (
                   <li key={index} className="leading-relaxed">
                     {item}
