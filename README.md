@@ -1,16 +1,150 @@
-# React + Vite
+# Frontend Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-deployed React SPA built to demonstrate frontend architectural discipline, routing stability, performance optimization, and controlled motion design.
 
-Currently, two official plugins are available:
+Live Site:  
+https://my-portfolio-lac-nine-cmr0mdy2ds.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Quick Snapshot
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 6+ route-level pages
+- 30+ modular components
+- SPA rewrite rules for production routing stability
+- Lighthouse: 99–100 Performance | 100 Accessibility
+- Automated CI/CD deployment via Vercel
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Overview
+
+This portfolio is intentionally built as a structured frontend system — not a template-based showcase.
+
+It demonstrates:
+
+- Component-driven architecture
+- Production-safe routing behavior
+- Clean responsive layout strategy
+- Motion used as enhancement, not distraction
+- Performance-first engineering
+- Deployment correctness under real hosting conditions
+
+The emphasis is engineering clarity, execution quality, and production correctness.
+
+---
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
+- Vercel (Production Deployment)
+
+---
+
+## Architecture Highlights
+
+### Component Structure
+
+Clear separation between:
+
+- Layout
+- UI Components
+- Motion Layer
+- Feature Modules
+- Utilities
+- Static Assets
+
+Responsibilities are intentionally isolated to preserve predictability and future scalability.
+
+---
+
+### Routing Stability
+
+Client-side routing handled using React Router.
+
+Production rewrite rules configured via `vercel.json` ensure:
+
+- No 404 on refresh
+- Nested route stability
+- Direct URL access reliability
+
+All routes fallback to `index.html` via Vercel rewrite configuration.  
+Hard refresh tested across all routed pages.
+
+---
+
+### Responsive System
+
+Mobile-first implementation.
+
+Tailwind breakpoints applied intentionally:
+
+- sm
+- md
+- lg
+- xl
+
+Responsive behavior was engineered from initial layout design, not patched later.
+
+---
+
+### Motion Design
+
+Framer Motion implemented with restraint:
+
+- Controlled entry animations
+- No scroll jank
+- No excessive transitions
+- Performance-safe animation timing
+
+Motion enhances clarity without increasing cognitive load.
+
+---
+
+### Performance
+
+Production Lighthouse Scores:
+
+- Performance: 99–100
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 90+
+
+Optimized production build via Vite with minimal runtime overhead and controlled asset output.
+
+---
+
+## Deployment
+
+Deployed on Vercel with:
+
+- GitHub CI/CD integration
+- Automatic production builds on push to `main`
+- SPA rewrite configuration
+- Preview validation before production release
+
+Each deployment is validated in preview before production release.
+
+---
+
+## Why This Portfolio Exists
+
+This project was built to demonstrate:
+
+- Frontend architectural thinking
+- Production deployment awareness
+- UX precision
+- Technical ownership
+- Intentional engineering decisions
+
+It reflects how I approach real-world frontend systems — structured, performant, and reliable.
+
+---
+
+## License
+
+Personal portfolio project.
