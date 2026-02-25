@@ -95,97 +95,95 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/60">
-      {/* Main Nav Container */}
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <header className="fixed top-0 left-0 w-full z-40 bg-[#0f0f0f]/80 backdrop-blur-md border-b border-white/10">
+    {/* Main Nav Container */}
+    <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-        {/* Logo */}
-        <button
-          onClick={() => handleNavClick("home")}
-          className="text-lg font-semibold tracking-tight text-gray-900"
-        >
-          NK <span className="text-gray-400 font-normal">| Frontend</span>
-        </button>
-
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-6 text-sm">
-          {NAV_ITEMS.map(({ label, id }) => (
-            <li key={id}>
-              <button
-                onClick={() => handleNavClick(id)}
-                className={`relative px-1 py-2 transition-colors
-                  ${
-                    activeSection === id && location.pathname === "/"
-                      ? "text-gray-900 font-medium"
-                      : "text-gray-500 hover:text-gray-800"
-                  }`}
-              >
-                {label}
-                {activeSection === id && location.pathname === "/" && (
-                  <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-gray-900 rounded-full" />
-                )}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Toggle Button */}
-        <button
-          className="md:hidden text-gray-800"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle Menu"
-        >
-          {isOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </nav>
-
-      {/* ----------------------------------------
-         Mobile Overlay
-      ----------------------------------------- */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/40 transition-opacity duration-200"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* ----------------------------------------
-         Mobile Slide Panel
-      ----------------------------------------- */}
-      <div
-        className={`fixed top-0 right-0 z-[60] w-72 h-screen 
-        bg-[#111111] shadow-2xl border-l border-white/10
-        transform transition-transform duration-300 ease-out
-        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      {/* Logo */}
+      <button
+        onClick={() => handleNavClick("home")}
+        className="text-lg font-semibold tracking-tight text-white"
       >
-        {/* Panel Header */}
-        <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
-          <span className="text-white font-medium tracking-wide">Menu</span>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-gray-400 hover:text-white transition-colors"
-            aria-label="Close Menu"
-          >
-            <X size={22} />
-          </button>
-        </div>
+        NK <span className="text-white/50 font-normal">| Frontend</span>
+      </button>
 
-        {/* Navigation Links */}
-        <ul className="flex flex-col px-8 py-8 space-y-6 text-base">
-          {NAV_ITEMS.map(({ label, id }) => (
-            <li key={id}>
-              <button
-                onClick={() => handleNavClick(id)}
-                className="w-full text-left font-medium tracking-wide text-gray-400 hover:text-white transition-colors"
-              >
-                {label}
-              </button>
-            </li>
-          ))}
-        </ul>
+      {/* Desktop Navigation */}
+      <ul className="hidden md:flex items-center gap-8 text-sm">
+        {NAV_ITEMS.map(({ label, id }) => (
+          <li key={id}>
+            <button
+              onClick={() => handleNavClick(id)}
+              className={`relative px-1 py-2 transition-colors duration-200
+                ${
+                  activeSection === id && location.pathname === "/"
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
+            >
+              {label}
+
+              {/* Active Underline */}
+              {activeSection === id && location.pathname === "/" && (
+                <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-white rounded-full" />
+              )}
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {/* Mobile Toggle Button */}
+      <button
+        className="md:hidden text-white/70 hover:text-white transition-colors"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Toggle Menu"
+      >
+        {isOpen ? <X size={22} /> : <Menu size={22} />}
+      </button>
+    </nav>
+
+    {/* Mobile Overlay */}
+    {isOpen && (
+      <div
+        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+        onClick={() => setIsOpen(false)}
+      />
+    )}
+
+    {/* Mobile Slide Panel */}
+    <div
+      className={`fixed top-0 right-0 z-[60] w-72 h-screen 
+      bg-[#111111] shadow-2xl border-l border-white/10
+      transform transition-transform duration-300 ease-out
+      ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+    >
+      {/* Panel Header */}
+      <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
+        <span className="text-white font-medium tracking-wide">Menu</span>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="text-white/60 hover:text-white transition-colors"
+          aria-label="Close Menu"
+        >
+          <X size={22} />
+        </button>
       </div>
-    </header>
-  );
+
+      {/* Navigation Links */}
+      <ul className="flex flex-col px-8 py-8 space-y-6 text-base">
+        {NAV_ITEMS.map(({ label, id }) => (
+          <li key={id}>
+            <button
+              onClick={() => handleNavClick(id)}
+              className="w-full text-left font-medium tracking-wide text-white/60 hover:text-white transition-colors"
+            >
+              {label}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </header>
+);
 };
 
 export default Navbar;
