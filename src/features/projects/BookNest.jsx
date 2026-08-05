@@ -49,7 +49,7 @@ const BookNest = () => {
 
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="https://book-store-frontend-five-mauve.vercel.app/"
+              href="https://book-store-frontend-dnvp.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-white text-black text-sm font-medium transition-all duration-200 hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98]"
@@ -240,7 +240,7 @@ const BookNest = () => {
 
           <div className="flex gap-6 text-white/60">
             <a
-              href="https://book-store-frontend-five-mauve.vercel.app/"
+              href="https://book-store-frontend-dnvp.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors duration-200"

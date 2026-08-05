@@ -166,7 +166,7 @@ const HeroSection = () => {
               {/* LinkedIn */}
               <div className="relative group">
                 <a
-                  href="https://linkedin.com/in/NiluKadam12"
+                  href="https://www.linkedin.com/in/nilu12/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
