@@ -1,150 +1,259 @@
+<div align="center">
+
 # Frontend Engineer Portfolio
 
-A production-deployed React SPA built to demonstrate frontend architectural discipline, routing stability, performance optimization, and controlled motion design.
+**Production React Portfolio — Performance, Responsive Design, Component Architecture & Modern UI Engineering**
 
-Live Site:  
+[![Build](https://img.shields.io/badge/build-passing-success)]()
+[![React](https://img.shields.io/badge/framework-React-61DAFB)]()
+[![Vite](https://img.shields.io/badge/build-Vite-646CFF)]()
+[![Deployment](https://img.shields.io/badge/deployment-Vercel-black)]()
+
+### 🌐 Live Demo
+
 https://my-portfolio-lac-nine-cmr0mdy2ds.vercel.app/
 
----
-
-## Quick Snapshot
-
-- 6+ route-level pages
-- 30+ modular components
-- SPA rewrite rules for production routing stability
-- Lighthouse: 99–100 Performance | 100 Accessibility
-- Automated CI/CD deployment via Vercel
+</div>
 
 ---
 
-## Overview
-
-This portfolio is intentionally built as a structured frontend system — not a template-based showcase.
-
-It demonstrates:
-
-- Component-driven architecture
-- Production-safe routing behavior
-- Clean responsive layout strategy
-- Motion used as enhancement, not distraction
-- Performance-first engineering
-- Deployment correctness under real hosting conditions
-
-The emphasis is engineering clarity, execution quality, and production correctness.
+<p align="center">
+<img src="./public/preview-image.png" width="100%" alt="Portfolio Preview"/>
+</p>
 
 ---
 
-## Tech Stack
+# Executive Summary
 
-- React
-- Vite
-- Tailwind CSS
-- Framer Motion
-- React Router
-- Vercel (Production Deployment)
+This portfolio is a production-deployed React application designed to showcase frontend engineering skills through modern UI development, reusable component architecture, responsive layouts, smooth user interactions, and optimized performance.
 
----
+Rather than functioning as a simple personal website, it represents a production-quality frontend application built with scalability, maintainability, and user experience in mind.
 
-## Architecture Highlights
-
-### Component Structure
-
-Clear separation between:
-
-- Layout
-- UI Components
-- Motion Layer
-- Feature Modules
-- Utilities
-- Static Assets
-
-Responsibilities are intentionally isolated to preserve predictability and future scalability.
+The project demonstrates how modern React applications are structured, deployed, and optimized for real-world environments.
 
 ---
 
-### Routing Stability
+# Quick Snapshot
 
-Client-side routing handled using React Router.
-
-Production rewrite rules configured via `vercel.json` ensure:
-
-- No 404 on refresh
-- Nested route stability
-- Direct URL access reliability
-
-All routes fallback to `index.html` via Vercel rewrite configuration.  
-Hard refresh tested across all routed pages.
+- Production-ready React SPA
+- Responsive across desktop, tablet and mobile devices
+- Feature-based project architecture
+- Modular and reusable React components
+- Smooth UI interactions using Framer Motion
+- Fast development and optimized production builds with Vite
+- Automated deployment through Vercel
+- Lighthouse-optimized frontend
 
 ---
 
-### Responsive System
+# Why This Project Exists
 
-Mobile-first implementation.
+Most portfolio websites only present projects.
 
-Tailwind breakpoints applied intentionally:
+This portfolio was built differently.
 
-- sm
-- md
-- lg
-- xl
+Its objective is to demonstrate how I approach frontend engineering beyond writing components—covering project organization, responsive design, clean architecture, performance optimization, accessibility, deployment, and maintainable code structure.
 
-Responsive behavior was engineered from initial layout design, not patched later.
+It acts as both my professional portfolio and an example of production-level React application development.
 
 ---
 
-### Motion Design
+# Features
 
-Framer Motion implemented with restraint:
+### Professional Sections
 
-- Controlled entry animations
-- No scroll jank
-- No excessive transitions
-- Performance-safe animation timing
+- Hero Section
+- About
+- Skills
+- Services
+- Featured Projects
+- Testimonials
+- Contact
 
-Motion enhances clarity without increasing cognitive load.
+### Engineering Features
 
----
-
-### Performance
-
-Production Lighthouse Scores:
-
-- Performance: 99–100
-- Accessibility: 100
-- Best Practices: 100
-- SEO: 90+
-
-Optimized production build via Vite with minimal runtime overhead and controlled asset output.
+- Responsive Design
+- Smooth Page Animations
+- Component-Based Architecture
+- Modular Folder Structure
+- Optimized Asset Loading
+- SPA Routing
+- Production Deployment
 
 ---
 
-## Deployment
+# Technology Stack
 
-Deployed on Vercel with:
-
-- GitHub CI/CD integration
-- Automatic production builds on push to `main`
-- SPA rewrite configuration
-- Preview validation before production release
-
-Each deployment is validated in preview before production release.
-
----
-
-## Why This Portfolio Exists
-
-This project was built to demonstrate:
-
-- Frontend architectural thinking
-- Production deployment awareness
-- UX precision
-- Technical ownership
-- Intentional engineering decisions
-
-It reflects how I approach real-world frontend systems — structured, performant, and reliable.
+| Layer | Technology |
+|-------|------------|
+| Framework | React 19 |
+| Build Tool | Vite |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Routing | React Router |
+| Icons | React Icons |
+| Deployment | Vercel |
 
 ---
 
-## License
+# Project Structure
 
-Personal portfolio project.
+```
+src/
+│
+├── components/
+├── features/
+│   ├── hero/
+│   ├── about/
+│   ├── skills/
+│   ├── services/
+│   ├── projects/
+│   ├── testimonials/
+│   └── contact/
+│
+├── hooks/
+├── utils/
+├── data/
+├── styles/
+│
+├── App.jsx
+└── main.jsx
+
+public/
+├── favicon.svg
+└── preview-image.png
+```
+
+The project follows a feature-based architecture where each section remains modular, independent, and easy to extend.
+
+---
+
+# Responsive Design
+
+The interface is designed with a mobile-first approach and adapts seamlessly across different screen sizes.
+
+Layouts, typography, spacing, and navigation are optimized to deliver a consistent user experience on desktop, tablet, and mobile devices.
+
+---
+
+# Component Architecture
+
+The application is organized into reusable React components with clear separation of responsibilities.
+
+Key architectural principles include:
+
+- Feature-based organization
+- Reusable UI components
+- Modular styling
+- Shared utilities
+- Scalable project structure
+
+This approach improves maintainability and simplifies future feature expansion.
+
+---
+
+# Animation Philosophy
+
+Animations are implemented using Framer Motion with a focus on usability rather than visual distraction.
+
+Motion is used to:
+
+- Improve visual hierarchy
+- Guide user attention
+- Enhance interaction feedback
+- Create smooth page transitions
+
+Animations remain lightweight to preserve performance and accessibility.
+
+---
+
+# Performance
+
+The project is optimized for production using Vite.
+
+Optimization strategies include:
+
+- Fast production builds
+- Optimized asset delivery
+- Minimal runtime overhead
+- Efficient component rendering
+- Lazy loading where appropriate
+- SPA routing optimized for deployment
+
+---
+
+# Deployment
+
+The application is deployed on **Vercel** with automated GitHub integration.
+
+Deployment includes:
+
+- Automatic production builds
+- Continuous deployment
+- SPA routing configuration
+- Fast global CDN delivery
+- Production-ready hosting
+
+Every push to the main branch automatically triggers a new deployment.
+
+---
+
+# Engineering Decisions
+
+### Why React?
+
+To build scalable, component-driven user interfaces with strong ecosystem support.
+
+### Why Vite?
+
+For faster development, instant hot module replacement, and highly optimized production builds.
+
+### Why Tailwind CSS?
+
+To create responsive, maintainable, utility-first UI without unnecessary CSS complexity.
+
+### Why Framer Motion?
+
+To introduce modern animations while maintaining performance and user experience.
+
+### Why Feature-Based Architecture?
+
+To improve scalability, readability, and long-term maintainability as the application grows.
+
+---
+
+# Future Improvements
+
+Potential future enhancements include:
+
+- Dark Mode
+- Blog Section
+- Project Filtering
+- CMS Integration
+- Contact Form Backend
+- Internationalization (i18n)
+- Advanced Accessibility Improvements
+- Performance Monitoring
+
+---
+
+# Project Statistics
+
+| Category | Details |
+|----------|---------|
+| Framework | React |
+| Build Tool | Vite |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Architecture | Feature-Based |
+| Deployment | Vercel |
+| Responsive | Desktop, Tablet & Mobile |
+| Version Control | Git & GitHub |
+
+---
+
+# Closing
+
+This portfolio represents my approach to frontend engineering—building applications that prioritize clean architecture, responsive design, maintainable code, smooth user experiences, and production-ready deployment.
+
+It reflects how I design, organize, and deliver modern React applications with an emphasis on quality, scalability, and real-world usability.
