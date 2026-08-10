@@ -11,27 +11,27 @@ const skills = [
   {
     title: "Frontend",
     items: [
-      "React — building reusable components and UI structure",
-      "JavaScript (ES6+) — application logic, async flows, state handling",
-      "HTML & CSS — semantic markup and responsive layouts",
-      "Tailwind CSS — scalable utility-first styling systems",
-      "Bootstrap — working with prebuilt UI components when needed",
+      "React — building reusable components and interactive UI",
+      "JavaScript (ES6+) — application logic, async flows, and state handling",
+      "HTML & CSS — semantic markup and responsive UI development",
+      "Tailwind CSS — utility-first styling and responsive UI",
+      "Bootstrap — responsive UI development and component-based styling",
       "Framer Motion — subtle animations for interaction and flow",
     ],
   },
   {
     title: "Backend",
     items: [
-      "Node.js & Express — consuming and building basic REST APIs",
-      "MongoDB — understanding data models and simple queries",
-      "Authentication — handling JWT-based protected routes",
+      "Node.js & Express — building and integrating REST APIs",
+      "MongoDB & Mongoose — data modeling and database operations",
+      "Authentication — JWT-based authentication and protected routes",
     ],
   },
   {
     title: "Tools",
     items: [
-      "Git & GitHub — version control and clean collaboration flow",
-      "VS Code — daily development, debugging, and refactoring",
+      "Git & GitHub — version control and project collaboration",
+      "VS Code — development, debugging, and refactoring",
       "Postman — API testing and request validation",
     ],
   },
@@ -39,9 +39,10 @@ const skills = [
     title: "Practices",
     items: [
       "Component reusability and separation of concerns",
-      "Readable code with meaningful naming",
-      "Performance-aware UI decisions",
-      "Accessibility basics using semantic HTML",
+      "Readable, maintainable code structure",
+      "Efficient UI state and interaction handling",
+      "Responsive UI development across desktop and mobile",
+      "Accessibility basics using semantic HTML and ARIA attributes",
     ],
   },
 ];
