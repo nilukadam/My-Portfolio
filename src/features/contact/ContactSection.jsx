@@ -1,11 +1,13 @@
 /*
-  ContactSection — Final Production Version
+  ContactSection — B4 Technical Cleanup Version
 
   Purpose:
   - Provide a clear recruiter/client contact path
-  - Keep the implementation lightweight and dependency-free
-  - Use the visitor's default email client for message delivery
-  - Preserve the existing visual system
+  - Validate the contact form
+  - Prepare a mailto message using the visitor's email client
+  - Clearly explain what happens after submission
+  - Provide a direct email fallback
+  - Avoid claiming that the website sends email directly
 */
 
 const CONTACT_EMAIL = "kadamnilu12@gmail.com";
@@ -14,7 +16,8 @@ const ContactSection = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     const name = formData.get("name")?.toString().trim();
     const email = formData.get("email")?.toString().trim();
@@ -56,12 +59,12 @@ const ContactSection = () => {
             id="contact-heading"
             className="text-3xl sm:text-4xl font-semibold tracking-tight"
           >
-            Get in touch
+            Let’s talk
           </h2>
 
           <p className="text-white/75 mt-4 leading-relaxed">
-            If you’d like to discuss a project, role, or collaboration,
-            feel free to leave a message. I’ll get back to you.
+            Interested in a frontend role, a project, or a collaboration?
+            Send me a message and I’ll be happy to connect.
           </p>
         </div>
 
@@ -153,7 +156,7 @@ const ContactSection = () => {
                 focus:outline-none
                 focus:ring-2 focus:ring-white/20
               "
-              placeholder="Briefly describe what you’d like to discuss"
+              placeholder="Tell me what you’d like to discuss"
             />
           </div>
 
@@ -172,18 +175,24 @@ const ContactSection = () => {
           >
             Send message
           </button>
-
         </form>
 
+        {/* Email Delivery Explanation */}
+        <p className="max-w-3xl mt-5 text-sm text-white/50 leading-relaxed">
+          Clicking “Send message” opens your default email application
+          with the message prepared. You can review it before sending.
+        </p>
+
         {/* Direct Email Fallback */}
-        <p className="max-w-3xl mt-6 text-sm text-white/50">
-          Prefer email?{" "}
+        <p className="max-w-3xl mt-3 text-sm text-white/50">
+          If your email application doesn’t open,{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
             className="text-white/70 hover:text-white transition-colors duration-200"
           >
-            Contact me directly
+            email me directly
           </a>
+          .
         </p>
 
       </div>

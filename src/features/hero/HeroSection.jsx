@@ -4,6 +4,17 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import resumePDF from "../../assets/images/MyResume.pdf";
 import profileImage from "../../assets/images/myPic.png";
 
+/*
+  HeroSection — B3 Trust & Conversation Version
+
+  Purpose:
+  - Establish immediate professional identity
+  - Communicate a credible frontend focus
+  - Show current availability clearly
+  - Provide direct access to work and resume
+  - Provide trusted professional contact channels
+*/
+
 const HeroSection = () => {
   return (
     <section
@@ -37,7 +48,7 @@ const HeroSection = () => {
               max-w-3xl
             "
           >
-            I Engineer Clean, Scalable Frontend Experiences.
+            I Build Clean, Reliable Frontend Experiences.
           </motion.h1>
 
           {/* Subheading */}
@@ -52,7 +63,8 @@ const HeroSection = () => {
           >
             I’m Nilu Kadam — a React-focused frontend developer
             building structured, production-ready web applications
-            with clarity, performance, and maintainability in mind.
+            with clear interfaces, reusable components, and reliable
+            user experiences.
           </motion.p>
 
           {/* Availability */}
@@ -69,7 +81,7 @@ const HeroSection = () => {
               className="w-2 h-2 mr-2 rounded-full bg-emerald-400"
             />
 
-            Open for work · Freelancing ready
+            Open to frontend roles and freelance opportunities
           </motion.div>
 
           {/* CTA Buttons */}
@@ -127,7 +139,6 @@ const HeroSection = () => {
               space-y-6
             "
           >
-
             {/* Profile Photo */}
             <div
               className="
@@ -154,7 +165,6 @@ const HeroSection = () => {
                 pt-2
               "
             >
-
               {/* Email */}
               <div className="relative group">
                 <a
@@ -251,11 +261,9 @@ const HeroSection = () => {
                   LinkedIn
                 </span>
               </div>
-
             </div>
           </div>
         </motion.div>
-
       </motion.div>
     </section>
   );

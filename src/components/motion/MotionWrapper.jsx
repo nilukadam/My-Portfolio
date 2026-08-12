@@ -1,15 +1,22 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from "framer-motion";
 
 const MotionWrapper = ({
   children,
   variants,
-  className = '',
+  className = "",
   ...props
 }) => {
   const prefersReducedMotion = useReducedMotion();
 
   if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>;
+    return (
+      <div
+        className={className}
+        {...props}
+      >
+        {children}
+      </div>
+    );
   }
 
   return (

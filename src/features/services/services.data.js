@@ -2,29 +2,29 @@ export const services = [
   {
     title: "Frontend Development (React)",
     problem:
-      "Teams and founders often need help turning product ideas into clean, maintainable user interfaces.",
+      "Product ideas need clear, responsive interfaces that users can understand and use easily.",
     approach:
-      "I build React applications with reusable components, responsive layouts, and a strong focus on clarity and maintainability.",
+      "I build React interfaces with reusable components, responsive layouts, and a focus on clean structure and maintainable code.",
   },
   {
     title: "UI Implementation from Design",
     problem:
-      "Good designs can lose consistency and usability when they are translated into code.",
+      "A good design needs to translate consistently across different screen sizes and interactions.",
     approach:
-      "I translate designs into responsive interfaces using React and modern CSS workflows while keeping accessibility and usability in mind.",
+      "I turn designs and UI requirements into responsive React interfaces while keeping usability, consistency, and accessibility basics in mind.",
   },
   {
     title: "Frontend Structure & Refactoring",
     problem:
-      "As frontend projects grow, components and UI logic can become difficult to maintain and extend.",
+      "As frontend projects grow, components and UI logic can become harder to understand and maintain.",
     approach:
-      "I help organize components, improve code structure, and refactor existing frontend code for better readability and maintainability.",
+      "I improve component organization, simplify frontend structure, and refactor existing code to make it easier to read and extend.",
   },
   {
     title: "Motion & Interaction",
     problem:
-      "Interfaces can feel static or unclear when important interactions lack visual feedback.",
+      "Interfaces can feel unclear or static when important interactions lack appropriate visual feedback.",
     approach:
-      "I use subtle Framer Motion animations to improve interaction clarity and flow without distracting from the experience.",
+      "I use subtle Framer Motion animations to support interaction feedback and page flow without distracting from the interface.",
   },
 ];

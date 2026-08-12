@@ -1,10 +1,10 @@
 /*
-  SkillsSection — Final Production Version
+  SkillsSection — B3 Trust & Conversation Version
 
   Positioning:
   - Frontend development remains the primary skill area
   - Backend skills demonstrate supporting full-stack capability
-  - Tools and engineering practices reinforce production readiness
+  - Tools and development practices reinforce practical frontend capability
 */
 
 const skills = [

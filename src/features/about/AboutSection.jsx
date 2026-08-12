@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { fade, stagger } from "../../components/motion";
 
 /*
-  AboutSection — Final B1 Version
+  AboutSection — B3 Trust & Conversation Version
 
-  Positioning:
-  - Frontend Developer remains the primary identity
-  - React and JavaScript are clearly represented
-  - Emphasis stays on maintainable, responsive interfaces
-  - Content remains grounded and avoids exaggerated claims
+  Purpose:
+  - Establish professional credibility
+  - Explain frontend focus and working approach
+  - Connect technical experience with real project work
+  - Keep full-stack experience secondary but credible
+  - Create a natural bridge toward professional conversation
 */
 
 const AboutSection = () => {
@@ -49,15 +50,24 @@ const AboutSection = () => {
             <motion.p variants={fade}>
               My approach is centered on reusable components, clean structure,
               thoughtful UI states, and reliable user interactions. I enjoy
-              turning product requirements and designs into interfaces that
-              work consistently across different screen sizes.
+              turning product requirements into interfaces that work
+              consistently across different screen sizes and feel predictable
+              for the people using them.
             </motion.p>
 
             <motion.p variants={fade}>
-              Alongside frontend development, I have hands-on experience
-              working with Node.js, Express, MongoDB, and REST APIs through
-              full-stack projects. My primary focus, however, remains
-              frontend development and creating dependable user experiences.
+              My project work includes frontend systems such as the Structured
+              Q&A Platform, along with full-stack applications such as
+              BookNest, where I’ve worked with Node.js, Express, MongoDB, REST
+              APIs, and authentication. While I have hands-on full-stack
+              experience, my primary professional focus remains frontend
+              development.
+            </motion.p>
+
+            <motion.p variants={fade}>
+              I’m currently open to frontend developer opportunities and
+              collaborations where I can contribute, keep improving, and build
+              dependable products with a team.
             </motion.p>
 
           </div>
