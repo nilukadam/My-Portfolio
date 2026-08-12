@@ -188,8 +188,13 @@ const ContactSection = () => {
           If your email application doesn’t open,{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="text-white/70 hover:text-white transition-colors duration-200"
-          >
+           className="
+            text-white/70
+            underline
+            underline-offset-4
+            hover:text-white
+            transition-colors duration-200"
+            >
             email me directly
           </a>
           .
