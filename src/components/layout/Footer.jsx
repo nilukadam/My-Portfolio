@@ -10,6 +10,7 @@ function Footer() {
             <p className="text-white/85 font-medium">
               Structured frontend systems. Built with clarity and intent.
             </p>
+
             <p className="text-white/65 text-sm">
               Open to frontend roles and product-focused collaborations.
             </p>
@@ -17,39 +18,50 @@ function Footer() {
 
           {/* Right Side */}
           <div className="flex flex-col items-start md:items-end space-y-3 text-sm">
+
             <div className="flex gap-6 text-white/65">
+
+              {/* GitHub */}
               <a
                 href="https://github.com/nilukadam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors duration-200"
+                aria-label="GitHub profile"
               >
                 GitHub
               </a>
 
+              {/* LinkedIn */}
               <a
-                href="https://linkedin.com/in/NiluKadam12"
+                href="https://www.linkedin.com/in/nilu12/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors duration-200"
+                aria-label="LinkedIn profile"
               >
                 LinkedIn
               </a>
 
+              {/* Email */}
               <a
                 href="mailto:kadamnilu12@gmail.com"
                 className="hover:text-white transition-colors duration-200"
+                aria-label="Email Nilu Kadam"
               >
                 Email
               </a>
+
             </div>
 
             <p className="text-white/50">
               © {new Date().getFullYear()} Nilu Kadam
             </p>
+
           </div>
 
         </div>
+
       </div>
     </footer>
   );

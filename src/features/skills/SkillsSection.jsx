@@ -1,10 +1,10 @@
 /*
   SkillsSection — Final Production Version
 
-  - Section spacing aligned with global rhythm
-  - Card styling aligned with ProjectCard system
-  - Removed bounce animation
-  - Improved contrast and stability
+  Positioning:
+  - Frontend development remains the primary skill area
+  - Backend skills demonstrate supporting full-stack capability
+  - Tools and engineering practices reinforce production readiness
 */
 
 const skills = [
@@ -14,8 +14,8 @@ const skills = [
       "React — building reusable components and interactive UI",
       "JavaScript (ES6+) — application logic, async flows, and state handling",
       "HTML & CSS — semantic markup and responsive UI development",
-      "Tailwind CSS — utility-first styling and responsive UI",
       "Bootstrap — responsive UI development and component-based styling",
+      "Tailwind CSS — utility-first styling and responsive UI",
       "Framer Motion — subtle animations for interaction and flow",
     ],
   },
@@ -24,7 +24,7 @@ const skills = [
     items: [
       "Node.js & Express — building and integrating REST APIs",
       "MongoDB & Mongoose — data modeling and database operations",
-      "Authentication — JWT-based authentication and protected routes",
+      "JWT Authentication — protected routes and authenticated application flows",
     ],
   },
   {
@@ -52,10 +52,10 @@ const SkillsSection = () => {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="py-24" // aligned with all sections
+      className="py-24"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Heading */}
         <div className="max-w-3xl mb-12">
           <h2
@@ -74,7 +74,7 @@ const SkillsSection = () => {
               className="
                 rounded-2xl
                 border border-white/10
-                bg-[#141414]  /* aligned with ProjectCard */
+                bg-[#141414]
                 p-6
                 transition-colors duration-200
                 hover:border-white/20
@@ -85,8 +85,11 @@ const SkillsSection = () => {
               </h3>
 
               <ul className="space-y-3 text-white/75">
-                {group.items.map((item, index) => (
-                  <li key={index} className="leading-relaxed">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="leading-relaxed"
+                  >
                     {item}
                   </li>
                 ))}
@@ -94,6 +97,7 @@ const SkillsSection = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -3,19 +3,22 @@ import qnaImg from "../../assets/screenShots/qna-homepage.png";
 import booknestImg from "../../assets/screenShots/booknest-home.png";
 
 /*
-  ProjectsOverview — Refined Production Version
+  ProjectsOverview — B2 Project Showcase Version
 
-  - Clear flagship dominance
-  - Tight vertical rhythm
-  - Balanced section spacing
-  - Clean hierarchy
+  Project hierarchy:
+  - Structured Q&A → Flagship frontend project
+  - BookNest → Full-stack MERN project
+
+  The homepage introduces each project clearly while
+  keeping detailed technical information on the
+  dedicated project pages.
 */
 
 const projects = [
   {
     title: "Structured Q&A Platform",
     description:
-      "Flagship frontend system engineered with routing discipline, authentication boundaries, and production-validated SPA stability.",
+      "A React-based Q&A platform focused on reusable components, structured navigation, authentication flows, and responsive user interactions.",
     image: qnaImg,
     href: "/projects/structured-qna",
     featured: true,
@@ -23,7 +26,7 @@ const projects = [
   {
     title: "BookNest",
     description:
-      "Structured React e-commerce SPA modeling authentication, cart coordination, and complete order lifecycle management.",
+      "A full-stack MERN e-commerce application with React, REST APIs, JWT authentication, MongoDB, cart workflows, and order management.",
     image: booknestImg,
     href: "/projects/booknest",
     featured: false,
@@ -35,7 +38,7 @@ const ProjectsOverview = () => {
     <section
       id="projects"
       aria-labelledby="projects-overview-heading"
-      className="py-24" // tightened from 28 → better global rhythm
+      className="py-24"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
@@ -49,14 +52,14 @@ const ProjectsOverview = () => {
           </h2>
 
           <p className="text-white/75 leading-relaxed">
-            Production-ready frontend systems focused on structure,
-            scalability, and predictable user experience.
+            Selected web applications demonstrating practical frontend
+            development, full-stack implementation, and structured user
+            experiences.
           </p>
         </div>
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
           {projects.map((project) => (
             <div
               key={project.title}
@@ -65,7 +68,6 @@ const ProjectsOverview = () => {
               <ProjectCard {...project} />
             </div>
           ))}
-
         </div>
 
       </div>

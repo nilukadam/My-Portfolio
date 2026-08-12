@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import { fade, stagger } from "../../components/motion";
 
 /*
-  AboutSection — Final Production Rhythm Version
+  AboutSection — Final B1 Version
 
-  - Section spacing aligned with global system
-  - Typography contrast improved
-  - Controlled vertical hierarchy
+  Positioning:
+  - Frontend Developer remains the primary identity
+  - React and JavaScript are clearly represented
+  - Emphasis stays on maintainable, responsive interfaces
+  - Content remains grounded and avoids exaggerated claims
 */
 
 const AboutSection = () => {
@@ -14,7 +16,7 @@ const AboutSection = () => {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="py-24" // aligned with Hero & Projects
+      className="py-24"
     >
       <motion.div
         variants={stagger}
@@ -23,7 +25,7 @@ const AboutSection = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-3xl space-y-8"> {/* tightened from 10 → 8 */}
+        <div className="max-w-3xl space-y-8">
 
           {/* Section Heading */}
           <motion.h2
@@ -36,27 +38,29 @@ const AboutSection = () => {
 
           {/* About Content */}
           <div className="space-y-6 text-white/75 leading-relaxed">
+
             <motion.p variants={fade}>
-              I approach frontend development as a problem-solving discipline,
-              not just a visual one. My focus is on understanding the intent behind
-              a feature, the users who will interact with it, and the long-term
-              maintainability of the code that supports it.
+              I’m a frontend developer focused on building responsive,
+              component-based web applications with React and JavaScript. I
+              care about creating interfaces that are clear, usable, and
+              maintainable rather than adding complexity for its own sake.
             </motion.p>
 
             <motion.p variants={fade}>
-              I prefer building systems that are clear, predictable, and scalable.
-              This means choosing simplicity over cleverness, writing readable
-              components, and designing interfaces that communicate without
-              unnecessary decoration.
+              My approach is centered on reusable components, clean structure,
+              thoughtful UI states, and reliable user interactions. I enjoy
+              turning product requirements and designs into interfaces that
+              work consistently across different screen sizes.
             </motion.p>
 
             <motion.p variants={fade}>
-              My goal is to create interfaces that feel stable and intentional —
-              products that teams can confidently extend and users can intuitively
-              trust.
+              Alongside frontend development, I have hands-on experience
+              working with Node.js, Express, MongoDB, and REST APIs through
+              full-stack projects. My primary focus, however, remains
+              frontend development and creating dependable user experiences.
             </motion.p>
+
           </div>
-
         </div>
       </motion.div>
     </section>

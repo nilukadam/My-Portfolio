@@ -1,52 +1,86 @@
 import { Link } from "react-router-dom";
 
 /*
-  ProjectCard — Final Refined Production Version
+  ProjectCard — Final Production Version
 
   Supports:
-  - Standard layout
-  - Flagship prominence
-  - Controlled elevation
-  - Subtle hierarchy dominance
+  - Standard project layout
+  - Flagship project prominence
+  - Controlled visual hierarchy
+  - Accessible keyboard focus
+  - Consistent project navigation
 */
 
-const ProjectCard = ({ title, description, image, href, featured }) => {
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  href,
+  featured,
+}) => {
   return (
     <Link
       to={href}
       className={`
-        group block rounded-2xl overflow-hidden
+        group block
+        rounded-2xl
+        overflow-hidden
         border border-white/10
         bg-[#141414]
         transition-all duration-300 ease-out
         hover:border-white/20
         hover:bg-[#1a1a1a]
-        ${featured ? "shadow-xl shadow-black/30" : "shadow-lg shadow-black/20"}
-        focus:outline-none focus:ring-2 focus:ring-white/20
+        ${
+          featured
+            ? "shadow-xl shadow-black/30"
+            : "shadow-lg shadow-black/20"
+        }
+        focus:outline-none
+        focus:ring-2
+        focus:ring-white/20
       `}
     >
-      {/* Screenshot */}
+      {/* Project Screenshot */}
       <div
         className={`
-          relative overflow-hidden
-          ${featured ? "aspect-[16/8]" : "aspect-[16/10]"}
+          relative
+          overflow-hidden
+          ${
+            featured
+              ? "aspect-[16/8]"
+              : "aspect-[16/10]"
+          }
         `}
       >
-        {/* Subtle overlay for text balance */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Subtle Hover Overlay */}
+        <div
+          aria-hidden="true"
+          className="
+            absolute inset-0
+            bg-gradient-to-t
+            from-black/40
+            to-transparent
+            opacity-0
+            group-hover:opacity-100
+            transition-opacity duration-300
+          "
+        />
 
         <img
           src={image}
-          alt={title}
+          alt={`${title} project preview`}
           className="
-            w-full h-full object-cover
-            transition-transform duration-500 ease-out
+            w-full h-full
+            object-cover
+            transition-transform
+            duration-500
+            ease-out
             group-hover:scale-[1.02]
           "
         />
       </div>
 
-      {/* Content */}
+      {/* Project Content */}
       <div
         className={`
           ${featured ? "p-8" : "p-6"}
@@ -55,7 +89,8 @@ const ProjectCard = ({ title, description, image, href, featured }) => {
       >
         <h3
           className={`
-            font-semibold tracking-tight
+            font-semibold
+            tracking-tight
             ${featured ? "text-2xl" : "text-xl"}
           `}
         >
@@ -66,8 +101,15 @@ const ProjectCard = ({ title, description, image, href, featured }) => {
           {description}
         </p>
 
-        <span className="text-sm text-white/60 group-hover:text-white transition-colors duration-200">
-          View Case Study →
+        <span
+          className="
+            text-sm
+            text-white/60
+            group-hover:text-white
+            transition-colors duration-200
+          "
+        >
+          View Project →
         </span>
       </div>
     </Link>
